@@ -44,8 +44,6 @@ namespace ProConsulta.Data
                         NormalizedEmail = "PROCONSULTA@HOTMAIL.COM.BR",
                         EmailConfirmed = true,
                         PasswordHash = hash.HashPassword(null, "12345678"),
-                        SecurityStamp = Guid.NewGuid().ToString(),
-                        ConcurrencyStamp = Guid.NewGuid().ToString(),
                         PhoneNumber = "11999999999",
                         Nome = "Pro Consulta"
                     }

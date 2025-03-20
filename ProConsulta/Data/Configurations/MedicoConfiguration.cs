@@ -28,8 +28,8 @@ namespace ProConsulta.Data.Configurations
                 .IsRequired(true)
                 .HasColumnType("NVARCHAR(11)");
 
-            builder.Property(x => x.Especialidade)
-                .IsRequired(true);
+            //builder.Property(x => x.Especialidade)
+            //    .IsRequired(true);
 
             builder.HasIndex(x => x.Documento)
                 .IsUnique();
