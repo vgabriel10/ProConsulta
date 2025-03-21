@@ -5,6 +5,8 @@ using MudBlazor.Services;
 using ProConsulta.Components;
 using ProConsulta.Components.Account;
 using ProConsulta.Data;
+using ProConsulta.Repositories.Medicos;
+using ProConsulta.Repositories.Pacientes;
 
 namespace ProConsulta;
 
@@ -25,6 +27,9 @@ public class Program
         builder.Services.AddScoped<IdentityUserAccessor>();
         builder.Services.AddScoped<IdentityRedirectManager>();
         builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
+
+        builder.Services.AddScoped<IMedicoRepository, MedicoRepository>();
+        builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
 
         builder.Services.AddAuthentication(options =>
             {
