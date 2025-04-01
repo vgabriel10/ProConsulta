@@ -7,7 +7,7 @@
 
 <MudPaper Class="pa-8 mt-4">
 
-    <EditForm>
+    <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
 
         <DataAnnotationsValidator/>
 
@@ -20,12 +20,46 @@
             @bind-Value="InputModel.PacienteId"
             Variant="Variant.Outlined"
             AnchorOrigin="Origin.BottomCenter"
-            For="@(()=> InputModel.PacienteId)>
-            foreach(var paciente in Pacientes)
+            For="@(()=> InputModel.PacienteId)">
+            @foreach(var paciente in Pacientes)
             {
                 <MudSelectItem Value="@paciente.Id">@paciente.Nome</MudSelectItem>
             }
     </MudSelect>
+
+        <MudSelect Label="Médicos"
+                   @bind-Value="InputModel.MedicoId"
+                   Variant="Variant.Outlined"
+                   AnchorOrigin="Origin.BottomCenter"
+                   For="@(()=> InputModel.MedicoId)">
+            @foreach (var medico in Medicos)
+            {
+                <MudSelectItem Value="@medico.Id">@medico.Nome</MudSelectItem>
+            }
+        </MudSelect>
+
+        <MudDatePicker 
+            Label="Data do agendamento" 
+            Variant="Variant.Outlined" 
+            @bind-Date="Date"
+            MinDate="MinDate"
+        DateFormat="dd/MM/yyyy"></MudDatePicker>
+
+        <MudTimePicker 
+            @bind-Time="Time"
+            Variant="Variant.Outlined"
+            Label="Hora do agendamento"
+        AmPm="false" />
+
+        <MudDivider Class="m-4" />
+
+        <MudButton Variant="Variant.Filled"
+                   StartIcon="@Icons.Material.Filled.Save"
+                   Color="Color.Info"
+                   Size="Size.Large"
+                   ButtonType="ButtonType.Submit">
+            Salvar
+        </MudButton>
 
     </EditForm>
 

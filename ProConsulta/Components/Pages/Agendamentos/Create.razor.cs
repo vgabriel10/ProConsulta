@@ -20,10 +20,10 @@ namespace ProConsulta.Components.Pages.Agendamentos
         private IPacienteRepository PacienteRepository { get; set; } = null!;
 
         [Inject]
-        private ISnackbar SnackBar { get; set; } = null!;
+        public ISnackbar SnackBar { get; set; } = null!;
 
         [Inject]
-        private NavigationManager NavigationManager { get; set; } = null!;
+        public NavigationManager NavigationManager { get; set; } = null!;
 
         public AgendamentoInputModel InputModel { get; set; } = new AgendamentoInputModel();
 
@@ -50,6 +50,7 @@ namespace ProConsulta.Components.Pages.Agendamentos
 
                     await AgendamentoRepository.AddAsync(agendamento);
                     SnackBar.Add("Agendamento realizado com sucesso!");
+                    NavigationManager.NavigateTo("/agendamentos");
                 }
             }
             catch(Exception ex)
