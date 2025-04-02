@@ -38,9 +38,9 @@ namespace ProConsulta.Data
                     new Atendente
                     {
                         Id = "a1b2c3d4-5e6f-78g9-h0i1-23456789abcd",
-                        UserName = "proconsulta@hotmail.com",
+                        UserName = "proconsulta@hotmail.com.br",
                         NormalizedUserName = "PROCONSULTA@HOTMAIL.COM.BR",
-                        Email = "proconsulta@hotmail.com",
+                        Email = "proconsulta@hotmail.com.br",
                         NormalizedEmail = "PROCONSULTA@HOTMAIL.COM.BR",
                         EmailConfirmed = true,
                         PasswordHash = hash.HashPassword(null, "12345678"),
